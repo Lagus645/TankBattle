@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://mina.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/itms/mina.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/blocks/boom.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/blocks/boom2.png" type="Texture" id=4]
+[ext_resource path="res://Music/1c7227d9b23f914.mp3" type="AudioStream" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 32.0624
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[node name="mina" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="Mina" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+z_index = 5
+frames = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

@@ -1,0 +1,170 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Control.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/корпусы/бшня1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Phones/Безымянный.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/корпусы/корпус п1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/корпусы/бшня23.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/корпусы/корпус п2.png" type="Texture" id=6]
+[ext_resource path="res://Music/-asia.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Sprites/Icons/Name.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Icons/exit.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Icons/play.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Icons/mscon.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Icons/mscoff.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/txt/txt1.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/txt/nikita.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/txt/txt2.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/txt/txt3.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Icons/vopros.png" type="Texture" id=18]
+
+[node name="Control" type="Control"]
+anchor_left = 0.344
+anchor_top = 0.375
+anchor_right = 0.641
+anchor_bottom = 0.471
+margin_left = -352.256
+margin_top = -225.0
+margin_right = 367.616
+margin_bottom = 317.4
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Безымянный" type="Sprite" parent="."]
+position = Vector2( 718, 364 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 326.0
+margin_top = 211.0
+margin_right = 629.0
+margin_bottom = 267.0
+rect_scale = Vector2( 2.5, 2.5 )
+flat = true
+
+[node name="Play" type="Sprite" parent="Button"]
+position = Vector2( 151, 34.5 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 326.0
+margin_top = 428.0
+margin_right = 629.0
+margin_bottom = 484.0
+rect_scale = Vector2( 2.5, 2.5 )
+flat = true
+
+[node name="Exit" type="Sprite" parent="Button3"]
+position = Vector2( 148.5, 30 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 9 )
+
+[node name="КорпусП1" type="Sprite" parent="."]
+position = Vector2( 126, 744 )
+rotation = 0.328122
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="Бшня1" type="Sprite" parent="КорпусП1"]
+position = Vector2( 15.6582, -25.3685 )
+rotation = 0.328122
+scale = Vector2( 1.252, 1.26 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Name" type="Sprite" parent="КорпусП1"]
+position = Vector2( -139.43, -342.858 )
+rotation = -0.328122
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 8 )
+
+[node name="КорпусП2" type="Sprite" parent="."]
+position = Vector2( 1306.89, 13.8358 )
+rotation = 3.93397
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="Бшня23" type="Sprite" parent="КорпусП2"]
+position = Vector2( 3.94391, -24.0873 )
+scale = Vector2( 1.252, 1.265 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="Button4" type="Button" parent="."]
+margin_left = 1537.0
+margin_top = 833.0
+margin_right = 1587.0
+margin_bottom = 885.0
+flat = true
+
+[node name="Mscoff" type="Sprite" parent="Button4"]
+visible = false
+position = Vector2( 26, 26 )
+scale = Vector2( 1.1, 1.3 )
+texture = ExtResource( 13 )
+
+[node name="Mscon" type="Sprite" parent="Button4"]
+position = Vector2( 27, 26 )
+scale = Vector2( 1.1, 1.3 )
+texture = ExtResource( 12 )
+
+[node name="Nikita" type="Sprite" parent="."]
+visible = false
+position = Vector2( -98, 333 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 15 )
+
+[node name="Txt1" type="Sprite" parent="."]
+visible = false
+position = Vector2( 735, 200 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 14 )
+
+[node name="Txt2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 736, 200 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 16 )
+
+[node name="Txt3" type="Sprite" parent="."]
+visible = false
+position = Vector2( 735, 200 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 17 )
+
+[node name="Button5" type="Button" parent="."]
+margin_left = 1458.0
+margin_top = 827.0
+margin_right = 1507.0
+margin_bottom = 875.0
+rect_scale = Vector2( 1.1, 1.3 )
+text = "?"
+flat = true
+
+[node name="Vopros" type="Sprite" parent="Button5"]
+position = Vector2( 24.5453, 23.8462 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 18 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]

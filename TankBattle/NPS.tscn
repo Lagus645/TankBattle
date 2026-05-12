@@ -1,0 +1,174 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://Music/untitled.wav" type="AudioStream" id=2]
+[ext_resource path="res://Music/99510ff08493a71.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Music/motor.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Sprites/корпусы/корпус п134.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/корпусы/бшня14.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/корпусы/корпус п1342.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/корпусы/корпус п22.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/корпусы/бшня2.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/корпусы/бшня23.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/корпусы/бшня223.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/корпусы/корпус п2.png" type="Texture" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "die",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "go",
+"speed": 7.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "PIY",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "die",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 96, 90 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 96.5, 91 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 229.167, 46.6667 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 67.5, 175.833 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 65, 175 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 230, 58.3333 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 13.3333, 732.5 )
+
+[node name="NPS" type="KinematicBody2D"]
+scale = Vector2( 0.6, 0.6 )
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.5, 0 )
+scale = Vector2( 1.005, 1 )
+frames = SubResource( 1 )
+animation = "die"
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="AnimatedSprite"]
+position = Vector2( 1, -20 )
+scale = Vector2( 1.252, 1.26 )
+frames = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1, 1 )
+shape = SubResource( 3 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 1, -165 )
+rotation = -1.5708
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1, 3 )
+shape = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -15.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -17.0
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -17.0
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( -0.833332, -136.667 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( -164.167, -7.5 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( 163.333, -8.33333 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( -1.66667, 130 )
+shape = SubResource( 9 )
+
+[node name="Area2D3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2( 1.66667, -722.5 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2( 516.667, -511.667 )
+rotation = 0.785398
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2( -533.333, 525 )
+rotation = 0.785398
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2( -520, -513.333 )
+rotation = -0.785398
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2( -733.333, 6.66669 )
+rotation = -1.5708
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2( 738.333, 3.33334 )
+rotation = -1.5708
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2( -1.66666, 731.667 )
+rotation = -3.14159
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2( 516.667, 521.667 )
+rotation = 2.35619
+shape = SubResource( 5 )
+
+[connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="." method="_on_Area2D3_body_entered"]

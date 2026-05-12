@@ -1,0 +1,138 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Sprites/Phones/Безымянный.png" type="Texture" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://LOCATION.gd" type="Script" id=4]
+[ext_resource path="res://Stats.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/blocks/block2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Icons/p2w.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Icons/p1w.png" type="Texture" id=8]
+[ext_resource path="res://bomb2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://mina.tscn" type="PackedScene" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.99997, 1022 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=3]
+0/name = "block2.png 0"
+0/texture = ExtResource( 6 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 2 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="LOCATION" type="Node2D"]
+position = Vector2( -62, 99 )
+script = ExtResource( 4 )
+
+[node name="P1w" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1038, 549 )
+scale = Vector2( 4, 4 )
+z_index = 5
+texture = ExtResource( 8 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Безымянный" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 989, 596.25 )
+scale = Vector2( 1.85817, 1.90458 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 432, 784 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="player2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1727, 151 )
+rotation = 3.14159
+scale = Vector2( 0.6, 0.6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 59, 544 )
+shape = SubResource( 1 )
+one_way_collision_margin = 0.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1990, 517 )
+shape = SubResource( 1 )
+one_way_collision_margin = 0.0
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1077, -103 )
+rotation = 1.5708
+shape = SubResource( 1 )
+one_way_collision_margin = 0.0
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1067, 985 )
+rotation = 1.5708
+shape = SubResource( 1 )
+one_way_collision_margin = 0.0
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 3 )
+format = 1
+tile_data = PoolIntArray( 65551, 0, 0, 131087, 0, 0, 196623, 0, 0, 262159, 0, 0, 262164, 0, 0, 262165, 0, 0, 262166, 0, 0, 262167, 0, 0, 262168, 0, 0, 262169, 0, 0, 262170, 0, 0, 262171, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524306, 0, 0, 589842, 0, 0, 655378, 0, 0, 720914, 0, 0 )
+
+[node name="P2w" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1039, 549 )
+scale = Vector2( 4, 4 )
+z_index = 4
+texture = ExtResource( 7 )
+
+[node name="Stats" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, -102 )
+
+[node name="bomb" parent="." instance=ExtResource( 9 )]
+position = Vector2( 442, 156 )
+
+[node name="bomb2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1744, 827 )
+
+[node name="bomb3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1045, 477 )
+
+[node name="bomb4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 724, 873 )
+
+[node name="bomb5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1422, 28 )
+
+[node name="mina" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1155, 262 )
+z_index = -2
+
+[node name="mina2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1011, 630 )
+z_index = -2

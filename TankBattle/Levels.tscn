@@ -1,0 +1,153 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Levels.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Phones/Безымянный.png" type="Texture" id=2]
+[ext_resource path="res://Music/-asia.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Sprites/Icons/Maps.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Icons/3.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Icons/2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Icons/1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Icons/mscon.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Icons/mscoff.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Icons/back.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Icons/4.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Icons/5.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Icons/6.png" type="Texture" id=13]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Maps" type="Sprite" parent="."]
+position = Vector2( 953, 204 )
+scale = Vector2( 2, 2 )
+z_index = 1
+texture = ExtResource( 4 )
+
+[node name="Безымянный" type="Sprite" parent="."]
+position = Vector2( 943, 489 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 596.0
+margin_top = 400.0
+margin_right = 696.0
+margin_bottom = 500.0
+rect_scale = Vector2( 2, 2 )
+flat = true
+
+[node name="2" type="Sprite" parent="Button"]
+position = Vector2( 50, 50 )
+texture = ExtResource( 6 )
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 346.0
+margin_top = 401.0
+margin_right = 446.0
+margin_bottom = 501.0
+rect_scale = Vector2( 2, 2 )
+flat = true
+
+[node name="1" type="Sprite" parent="Button2"]
+position = Vector2( 50, 50 )
+texture = ExtResource( 7 )
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 846.0
+margin_top = 400.0
+margin_right = 946.0
+margin_bottom = 500.0
+rect_scale = Vector2( 2, 2 )
+flat = true
+
+[node name="3" type="Sprite" parent="Button3"]
+position = Vector2( 49.5, 50.5 )
+texture = ExtResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="Button4" type="Button" parent="."]
+margin_left = 28.0
+margin_top = 31.0
+margin_right = 87.0
+margin_bottom = 83.0
+text = "back"
+flat = true
+
+[node name="Back" type="Sprite" parent="Button4"]
+position = Vector2( 42, 38.5 )
+scale = Vector2( 1.48387, 1.2907 )
+texture = ExtResource( 10 )
+
+[node name="Button5" type="Button" parent="."]
+margin_left = 1833.0
+margin_top = 1000.0
+margin_right = 1883.0
+margin_bottom = 1052.0
+flat = true
+
+[node name="Mscoff" type="Sprite" parent="Button5"]
+visible = false
+position = Vector2( 26, 26 )
+scale = Vector2( 1.1, 1.3 )
+texture = ExtResource( 9 )
+
+[node name="Mscon" type="Sprite" parent="Button5"]
+position = Vector2( 26, 26 )
+scale = Vector2( 1.1, 1.3 )
+texture = ExtResource( 8 )
+
+[node name="Button6" type="Button" parent="."]
+margin_left = 1096.0
+margin_top = 400.0
+margin_right = 1196.0
+margin_bottom = 500.0
+rect_scale = Vector2( 2, 2 )
+flat = true
+
+[node name="4" type="Sprite" parent="Button6"]
+position = Vector2( 50.5, 50 )
+texture = ExtResource( 11 )
+
+[node name="Button7" type="Button" parent="."]
+margin_left = 1346.0
+margin_top = 400.0
+margin_right = 1546.0
+margin_bottom = 600.0
+flat = true
+
+[node name="5" type="Sprite" parent="Button7"]
+position = Vector2( 100, 100 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 12 )
+
+[node name="Button8" type="Button" parent="."]
+margin_left = 846.0
+margin_top = 700.0
+margin_right = 1046.0
+margin_bottom = 900.0
+flat = true
+
+[node name="6" type="Sprite" parent="Button8"]
+position = Vector2( 100, 100 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="Button6" to="." method="_on_Button6_pressed"]
+[connection signal="pressed" from="Button7" to="." method="_on_Button7_pressed"]
+[connection signal="pressed" from="Button8" to="." method="_on_Button8_pressed"]
