@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/motor.mp3-826ac656d7f4eecdcefe5f87d34c026f.mp3str"
+
+[deps]
+
+source_file="res://Music/motor.mp3"
+dest_files=[ "res://.import/motor.mp3-826ac656d7f4eecdcefe5f87d34c026f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
